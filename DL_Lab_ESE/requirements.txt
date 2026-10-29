@@ -1,0 +1,14 @@
+# Streamlit Community Cloud dependencies (Linux).
+# Streamlit Cloud reads this file first because it sits next to the entrypoint (DL_Lab_ESE/realtime_demo.py).
+# Same versions as ../requirements.txt, except that torch and torchaudio come from PyTorch's CPU-only index, so the
+# cloud build does not download several GB of CUDA libraries the app never uses.
+# Local Windows installs keep using ../requirements.txt. Select Python 3.12 when deploying (numpy 2.5 needs >= 3.12).
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.11.0+cpu
+torchaudio==2.11.0+cpu
+streamlit==1.66.1
+altair==6.3.0
+soundfile==0.14.0
+numpy==2.5.4
+pandas==3.1.0
+scikit-learn==1.9.1

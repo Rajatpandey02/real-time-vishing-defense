@@ -1,0 +1,16 @@
+# Theme for the Vishing Defence dashboard.
+# Streamlit reads this file from the folder you launch from, so start the app from the project root:
+#   streamlit run DL_Lab_ESE/realtime_demo.py
+# Launched from elsewhere, the app still works but uses your default Streamlit theme.
+[theme]
+base = "light"
+primaryColor = "#D4582A"
+backgroundColor = "#F6F4EF"
+secondaryBackgroundColor = "#ECE8E0"
+textColor = "#1C1D20"
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

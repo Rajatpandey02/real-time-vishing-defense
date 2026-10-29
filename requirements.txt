@@ -1,0 +1,26 @@
+# Real-Time Vishing Defence: Python dependencies
+#
+# Requires Python 3.12 or newer (numpy 2.5 needs >= 3.12).
+# Tested on 29 Oct 2026 with Python 3.12.3 (Linux x86-64): unit tests + dashboard in a browser.
+# Every pin below has a published Windows (win_amd64) wheel for Python 3.12 on PyPI.
+#
+# torch and torchaudio MUST be the same release. torchaudio contains a compiled
+# extension built against one specific torch version. Tested here:
+#   torch 2.11.0 + torchaudio 2.11.0  -> works
+#   torch 2.11.0 + torchaudio 2.11.1  -> fails at import
+#                                       ("undefined symbol" in libtorchaudio)
+# On Windows/macOS, plain `pip install` gets the CPU build of torch, which is all
+# the dashboard needs. (On Linux, PyPI torch also pulls CUDA libraries.)
+
+# --- dashboard: DL_Lab_ESE/realtime_demo.py, vishing_core.py, scam_text.py
+torch==2.11.0
+torchaudio==2.11.0
+streamlit==1.66.1
+altair==6.3.0            # timeline chart (also installed by streamlit)
+soundfile==0.14.0
+numpy==2.5.4
+pandas==3.1.0
+scikit-learn==1.9.1
+
+# --- training script only: vishing_experiments.py uses DataFrame.to_markdown()
+tabulate==0.10.0

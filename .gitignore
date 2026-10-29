@@ -1,0 +1,39 @@
+# Real-Time Vishing Defence - files that must never be committed
+
+# Python environments and caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Secrets and credentials
+.env
+.env.*
+*.env
+.streamlit/secrets.toml
+*.pem
+*.key
+*credentials*
+*token*
+
+# Dataset (ASVspoof 2019 LA is large and has its own licence; never upload it)
+LA/
+ASVspoof*/
+*.flac
+*.zip
+*.tar
+*.tar.gz
+
+# Local backups and generated outputs
+_backup*/
+results_v2/
+*.log
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
